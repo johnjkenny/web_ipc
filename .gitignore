@@ -172,3 +172,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+web_ipc/web_env/.*
+web_ipc/web_env/*.crt
+web_ipc/web_env/*.key
+web_ipc/web_env/ca-serial
+web_ipc/web_env/users.db

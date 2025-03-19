@@ -1,0 +1,26 @@
+{
+    "cSpell.words": [
+        "anyio",
+        "checkpw",
+        "creds",
+        "fastapi",
+        "fernet",
+        "gensalt",
+        "gmtime",
+        "hashpw",
+        "ipca",
+        "isinstance",
+        "laddr",
+        "levelname",
+        "PKCS",
+        "pycache",
+        "pydantic",
+        "reqs",
+        "sessionmaker",
+        "setuptools",
+        "sniffio",
+        "starlette",
+        "uvicorn",
+        "xork"
+    ]
+}
