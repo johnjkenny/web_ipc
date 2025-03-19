@@ -1,7 +1,6 @@
 from argparse import REMAINDER
 
 from web_ipc.arg_parser import ArgParser
-from web_ipc.init import Init
 
 
 def parse_parent_args(args: dict):
@@ -69,6 +68,7 @@ def web_certs(parent_args: list = None):
 
 
 def parse_init_args(args: dict):
+    from web_ipc.init import Init
     if args.get('run'):
         return Init(args['force'])._run()
     return True

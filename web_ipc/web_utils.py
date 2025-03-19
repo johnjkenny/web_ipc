@@ -233,7 +233,7 @@ class WebUtils():
                 return use_port
         return 0
 
-    def pickle_dump(self, file_name: str, data: object, key: bytes = None):
+    def pickle_dump(self, file_name: str, data: object, key: bytes = None) -> bool:
         """Dump data to file using pickle and XOR encryption.
 
         Args:
@@ -271,7 +271,7 @@ class WebUtils():
             self.log.exception('Failed to dump data to pickle bytes')
         return None
 
-    def pickle_load(self, file_name: str, key: bytes = None):
+    def pickle_load(self, file_name: str, key: bytes = None) -> dict | None:
         """Load data from file using pickle and XOR decryption.
 
         Args:
@@ -279,13 +279,13 @@ class WebUtils():
             key (bytes, optional): xor key for decryption. Defaults to None.
 
         Returns:
-            object | None: loaded data from file or None if failed
+            dict | None: loaded data from file or None if failed
         """
         with open(file_name, 'rb') as file:
             return self.pickle_loads(file.read(), key)
         return None
 
-    def pickle_loads(self, data: bytes, key: bytes = None):
+    def pickle_loads(self, data: bytes, key: bytes = None) -> dict | None:
         """Load data from pickle bytes and decrypt using XOR cipher.
 
         Args:
@@ -293,7 +293,7 @@ class WebUtils():
             key (bytes, optional): xor decrypt key. Defaults to None.
 
         Returns:
-            object | None: loaded data or None if failed
+            dict | None: loaded data or None if failed
         """
         try:
             return pickle.loads(Cipher.decrypt(data, key or self.key))
